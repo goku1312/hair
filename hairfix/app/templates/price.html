@@ -1,15 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>Salone - Beauty Salon Website Template</title>
+    <title>HairFix - Pricing</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,15 +23,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -48,8 +48,8 @@
     <!-- Navbar Start -->
     <div class="container-fluid bg-light sticky-top p-0">
         <nav class="navbar navbar-expand-lg navbar-light p-0">
-            <a href="index.html" class="navbar-brand bg-primary py-4 px-5 me-0">
-                <h1 class="mb-0"><i class="bi bi-scissors"></i>Salone</h1>
+            <a href="{% url 'index' %}" class="navbar-brand bg-primary py-4 px-5 me-0">
+                <h1 class="mb-0"><i class="bi bi-scissors"></i>Surab Ali Hair Fix</h1>
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -57,21 +57,11 @@
             </button>
             <div class="collapse navbar-collapse p-3" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Service</a>
-                    <a href="price.html" class="nav-item nav-link active">Price</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu bg-light mt-2">
-                            <a href="gallery.html" class="dropdown-item">Photo Gallery</a>
-                            <a href="blog.html" class="dropdown-item">Beauty Blog</a>
-                            <a href="team.html" class="dropdown-item">Our Team</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Page</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
+                    <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                    <a href="{% url 'services' %}" class="nav-item nav-link">Service</a>
+                    <a href="{% url 'price' %}" class="nav-item nav-link active">Price</a>
+                    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="d-flex">
                     <a class="btn btn-primary btn-sm-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
@@ -87,12 +77,11 @@
     <!-- Hero Start -->
     <div class="container-fluid bg-light page-header py-5">
         <div class="container text-center py-5">
-            <h1 class="display-1 animated slideInLeft">Price</h1>
+            <h1 class="display-1 animated slideInLeft">Pricing</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center animated slideInLeft mb-0">
-                    <li class="breadcrumb-item"><a class="text-primary" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-primary" href="#">Pages</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Price</li>
+                    <li class="breadcrumb-item"><a class="text-primary" href="{% url 'index' %}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Pricing</li>
                 </ol>
             </nav>
         </div>
@@ -107,7 +96,7 @@
                 <div class="d-flex align-items-center h-100 bg-primary p-5">
                     <div class="wow fadeIn" data-wow-delay="0.3s">
                         <h1 class="font-dancing-script text-white">Pricing</h1>
-                        <h1 class="mb-0">Beauty Salon</h1>
+                        <h1 class="mb-0">Surab Ali Hair Fix</h1>
                         <h1 class="display-1 text-uppercase mb-5" style="letter-spacing: 10px;">Pricing</h1>
                         <div class="row g-4 align-items-center">
                             <div class="col-lg-6">
@@ -118,8 +107,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <p>Lorem ipsum dolor sit, consectetur adipiscing elit. Maecenas eget libero lobortis, auctor nisi quis, aliquet nunc. Nam dapibus lacus.</p>
-                                <a class="btn btn-dark" href="">Get 20% Off</a>
+                                <p>Transform your look with our professional hair services. Book your appointment today and experience the HairFix difference with our special discount offer.</p>
+                                <a class="btn btn-dark" href="{% url 'contact' %}">Get 20% Off</a>
                             </div>
                         </div>
                     </div>
@@ -128,42 +117,42 @@
             <div class="col-md-6">
                 <div class="h-100 bg-dark p-5">
                     <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.1s">
-                        <img class="img-fluid flex-shrink-0" src="img/price-1.jpg" alt="">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/price-1.jpg' %}" alt="">
                         <div class="text-end px-4">
                             <h6 class="text-uppercase text-primary">Haircut</h6>
                             <h3 class="text-white font-work-sans mb-0">$49</h3>
                         </div>
                     </div>
                     <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.2s">
-                        <img class="img-fluid flex-shrink-0" src="img/price-2.jpg" alt="">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/price-2.jpg' %}" alt="">
                         <div class="text-end px-4">
                             <h6 class="text-uppercase text-primary">Makeup</h6>
                             <h3 class="text-white font-work-sans mb-0">$79</h3>
                         </div>
                     </div>
                     <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.3s">
-                        <img class="img-fluid flex-shrink-0" src="img/price-3.jpg" alt="">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/price-3.jpg' %}" alt="">
                         <div class="text-end px-4">
                             <h6 class="text-uppercase text-primary">Manicure</h6>
                             <h3 class="text-white font-work-sans mb-0">$59</h3>
                         </div>
                     </div>
                     <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.4s">
-                        <img class="img-fluid flex-shrink-0" src="img/price-4.jpg" alt="">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/price-4.jpg' %}" alt="">
                         <div class="text-end px-4">
                             <h6 class="text-uppercase text-primary">Pedicure</h6>
                             <h3 class="text-white font-work-sans mb-0">$49</h3>
                         </div>
                     </div>
                     <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.5s">
-                        <img class="img-fluid flex-shrink-0" src="img/price-5.jpg" alt="">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/price-5.jpg' %}" alt="">
                         <div class="text-end px-4">
                             <h6 class="text-uppercase text-primary">Massage</h6>
                             <h3 class="text-white font-work-sans mb-0">$39</h3>
                         </div>
                     </div>
                     <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.6s">
-                        <img class="img-fluid flex-shrink-0" src="img/price-6.jpg" alt="">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/price-6.jpg' %}" alt="">
                         <div class="text-end px-4">
                             <h6 class="text-uppercase text-primary">Skin Care</h6>
                             <h3 class="text-white font-work-sans mb-0">$99</h3>
@@ -181,13 +170,13 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-6 pe-lg-5">
-                    <a href="index.html" class="navbar-brand">
-                        <h1 class="display-5 text-primary mb-0"><i class="bi bi-scissors"></i>Salone</h1>
+                    <a href="{% url 'index' %}" class="navbar-brand">
+                        <h1 class="display-5 text-primary mb-0"><i class="bi bi-scissors"></i>Surab Ali Hair Fix</h1>
                     </a>
-                    <p>Aliquyam sed elitr elitr erat sed diam ipsum eirmod eos lorem nonumy. Tempor sea ipsum diam  sed clita dolore eos dolores magna erat dolore sed stet justo et dolor.</p>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-2"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+                    <p>At HairFix, we're passionate about creating beautiful hairstyles that make you feel confident and beautiful. Our expert stylists are dedicated to providing exceptional service and staying current with the latest trends and techniques.</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-2"></i>Surab Ali Hair Fixing Center, Dubai, Dera Baniyas Road, Carlton Creek HOTEL, Shop No 8</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-2"></i><a href="tel:+971526774955" class="text-white-50">+971526774955</a></p>
+                    <p><i class="fa fa-envelope me-2"></i><a href="mailto:surabalihairfixingcenterdubail@gmail.com" class="text-white-50">surabalihairfixingcenterdubail@gmail.com</a></p>
                     <div class="d-flex justify-content-start mt-4">
                         <a class="btn btn-sm-square btn-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-sm-square btn-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -199,16 +188,16 @@
                     <div class="row g-4">
                         <div class="col-sm-6">
                             <h5 class="text-primary mb-4">Quick Links</h5>
-                            <a class="btn btn-link" href="">About Us</a>
-                            <a class="btn btn-link" href="">Contact Us</a>
-                            <a class="btn btn-link" href="">Our Services</a>
+                            <a class="btn btn-link" href="{% url 'about' %}">About Us</a>
+                            <a class="btn btn-link" href="{% url 'contact' %}">Contact Us</a>
+                            <a class="btn btn-link" href="{% url 'services' %}">Our Services</a>
                             <a class="btn btn-link" href="">Terms & Condition</a>
                         </div>
                         <div class="col-sm-6">
                             <h5 class="text-primary mb-4">Popular Links</h5>
-                            <a class="btn btn-link" href="">About Us</a>
-                            <a class="btn btn-link" href="">Contact Us</a>
-                            <a class="btn btn-link" href="">Our Services</a>
+                            <a class="btn btn-link" href="{% url 'about' %}">About Us</a>
+                            <a class="btn btn-link" href="{% url 'contact' %}">Contact Us</a>
+                            <a class="btn btn-link" href="{% url 'services' %}">Our Services</a>
                             <a class="btn btn-link" href="">Terms & Condition</a>
                         </div>
                         <div class="col-sm-12">
@@ -219,7 +208,7 @@
                                 <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
                                         class="fa fa-paper-plane text-primary fs-4"></i></button>
                             </div>
-                            <p class="mb-0">Diam sed sed dolor stet amet eirmod</p>
+                            <p class="mb-0">Stay updated with our latest hair trends and special offers</p>
                         </div>
                     </div>
                 </div>
@@ -234,13 +223,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" href="#">HairFix Salon</a>, All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    Designed By <a class="border-bottom">HTML Codex</a>
                 </div>
             </div>
         </div>
@@ -255,15 +241,15 @@
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>

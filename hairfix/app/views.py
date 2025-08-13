@@ -10,3 +10,9 @@ def about(request):
 
 def contact(request):
     return render(request,'contact.html')
+
+def price(request):
+    return render(request,'price.html')
+
+def services(request):
+    return render(request,'service.html')
