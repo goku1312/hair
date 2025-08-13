@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w&u24ppt%lsy8o#^9*-)2rq*cmj*!cijimchwo$sx=)2yfni-('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['3.29.98.35','www.surabalihairfixing.co.in','surabalihairfixing.co.in','127.0.0.1']
 
