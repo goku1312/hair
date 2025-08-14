@@ -131,3 +131,24 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'mediafiles'
+
+
+
+CSRF_TRUSTED_ORIGINS = [
+    
+    "https://surabalihairfixing.co.in",
+    "https://www.surabalihairfixing.co.in",
+    "http://surabalihairfixing.co.in",
+    "http://www.surabalihairfixing.co.in",
+     
+]
+
+CORS_ALLOWED_ORIGINS = [
+    
+    "https://www.surabalihairfixing.co.in",
+    "https://surabalihairfixing.co.in",
+    "http://surabalihairfixing.co.in",
+    "http://www.surabalihairfixing.co.in",
+        
+]
+
